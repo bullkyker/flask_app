@@ -3,6 +3,7 @@
 	git add -A
 	git commit -m "This is the message in quotes"
 	git push
+	remember pip freeze
 """
 
 
