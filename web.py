@@ -1,7 +1,16 @@
+"""
+	git status
+	git add -A
+	git commit -m "This is the message in quotes"
+	git push
+"""
+
+
 #http://stackoverflow.com/questions/16981921/relative-imports-in-python-3
 #https://www.crummy.com/software/BeautifulSoup/
 import sys
 from pathlib import Path # if you haven't already done so
+import os
 root = str(Path(__file__).resolve().parents[1])
 # Or
 #   from os.path import dirname, abspath
@@ -25,4 +34,5 @@ def about():
 	return render_template('about.html')
 	
 if __name__ == "__main__":
-    app.run()
+	port = int(os.environ.get("PORT", 5000)
+    app.run(host="0.0.0.0", port=port)
