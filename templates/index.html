@@ -1,0 +1,26 @@
+<!-- http://v4-alpha.getbootstrap.com/ -->
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">		
+	</head>
+	<body><center>
+		<div class = "jumbotron">
+			<div class = "container">
+				<h1>Hello!</h1><br>
+				{% if weather %}
+					<h2>{{ weather}}!</h2>
+					<a href="{{ url_for('index') }}"> Look-up another </a>
+				{% else %} 
+					<h2>enter a location and I'll retrieve the weather</h2>
+					<form action="/" class = "form-inline">
+						<div class="form-group">
+							<input type = "text" name="weather" placeholder="Enter your location here" class="form-control">
+							<input type = "submit" value="Submit" class="btn btn-primary">
+						</div>
+					</form>
+				{% endif %}
+				<a href="{{ url_for('about') }}"> About Page </a>
+			</div>
+		</div>
+	</body>
+</html>
