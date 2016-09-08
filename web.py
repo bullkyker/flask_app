@@ -10,9 +10,10 @@
 
 #http://stackoverflow.com/questions/16981921/relative-imports-in-python-3
 #https://www.crummy.com/software/BeautifulSoup/
-import sys
-#from pathlib import Path # if you haven't already done so
+#import sys
+
 import os
+#from pathlib import Path # if you haven't already done so
 #root = str(Path(__file__).resolve().parents[1])
 # Or
 #   from os.path import dirname, abspath
@@ -24,6 +25,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+	location = None
 	if(request.values.get('weather'))!=None:
 		location = request.values.get('weather')
 		local_weather=get_location(location)
