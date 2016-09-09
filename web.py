@@ -1,11 +1,12 @@
-# """
-	# git status
-	# git add -A
-	# git commit -m "This is the message in quotes"
-	# git push
-	# remember pip freeze
-	# https://polar-peak-85361.herokuapp.com/ | https://git.heroku.com/polar-peak-85361.git
-# """
+"""
+	git status
+	git add -A
+	git commit -m "This is the message in quotes"
+	git push
+	remember pip freeze
+	https://polar-peak-85361.herokuapp.com/ | https://git.heroku.com/polar-peak-85361.git
+	heroku apps:rename bullkyker-weather
+"""
 
 
 #http://stackoverflow.com/questions/16981921/relative-imports-in-python-3
@@ -39,5 +40,4 @@ def about():
 
 if __name__  ==  "__main__":
 	port = int(os.environ.get("PORT", 5000))
-	#port = 5000
 	app.run(debug=True, host='0.0.0.0', port=port)	
