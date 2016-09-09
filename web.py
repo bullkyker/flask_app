@@ -21,7 +21,6 @@ import os
 #sys.path.append(root)
 from weather import get_location
 from flask import Flask, render_template, request
-from flaskrun import flaskrun
 app = None 
 app = Flask(__name__)
 @app.route("/")
