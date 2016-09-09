@@ -21,10 +21,10 @@ import os
 #sys.path.append(root)
 #from weather import get_location
 from flask import Flask, render_template, request
-app = Flask(__name__)
 
 @app.route("/")
 def index():
+	app = Flask(__name__)
 	location = None
 	local_weather = None
 	if(request.values.get('weather'))!=None:
