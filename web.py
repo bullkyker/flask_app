@@ -1,11 +1,11 @@
-"""
-	git status
-	git add -A
-	git commit -m "This is the message in quotes"
-	git push
-	remember pip freeze
-	https://polar-peak-85361.herokuapp.com/ | https://git.heroku.com/polar-peak-85361.git
-"""
+# """
+	# git status
+	# git add -A
+	# git commit -m "This is the message in quotes"
+	# git push
+	# remember pip freeze
+	# https://polar-peak-85361.herokuapp.com/ | https://git.heroku.com/polar-peak-85361.git
+# """
 
 
 #http://stackoverflow.com/questions/16981921/relative-imports-in-python-3
