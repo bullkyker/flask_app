@@ -19,16 +19,17 @@ import os
 #   from os.path import dirname, abspath
 #   root = dirname(dirname(abspath(__file__)))
 #sys.path.append(root)
-from weather import get_location
+#from weather import get_location
 from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route("/")
 def index():
 	location = None
+	local_weather = None
 	if(request.values.get('weather'))!=None:
-		location = request.values.get('weather')
-		local_weather=get_location(location)
+		#location = request.values.get('weather')
+		#local_weather=get_location(location)
 		return render_template('index.html', weather=local_weather)
 	else:
 		return render_template('index.html')
