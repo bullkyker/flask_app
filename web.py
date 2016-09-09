@@ -10,8 +10,7 @@
 
 #http://stackoverflow.com/questions/16981921/relative-imports-in-python-3
 #https://www.crummy.com/software/BeautifulSoup/
-#import sys
-
+import sys
 import os
 #from pathlib import Path # if you haven't already done so
 #root = str(Path(__file__).resolve().parents[1])
@@ -21,6 +20,7 @@ import os
 #sys.path.append(root)
 from weather import get_location
 from flask import Flask, render_template, request
+from flaskrun import flaskrun
 app = None 
 app = Flask(__name__)
 @app.route("/")
@@ -40,4 +40,5 @@ def about():
 
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000)
-    @app.run(debug = True, host='0.0.0.0', port=port)
+    #app.run(debug = True, host='0.0.0.0', port=port)
+	flaskrun(app, 0.0.0.0, port)
