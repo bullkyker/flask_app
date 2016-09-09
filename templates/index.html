@@ -1,7 +1,14 @@
 <!-- http://v4-alpha.getbootstrap.com/ -->
 <html>
 	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+		<script language="JavaScript">
+		function openWin2() {
+			myWin= open("about.html", "displayWindow", 
+			"width=200,height=300,status=no,toolbar=no,menubar=no,resizeable=no");
+		}		
+		</script>
+
 	</head>
 	<body><center>
 		<div class = "jumbotron">
@@ -29,9 +36,10 @@
 				{% endif %}
 				</div>
 				<div class="col-sm-4">
-					<h3>Column 2</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+					<h3>Yelp Search</h3>
+					<form>
+						<input type="button" value="The Story" onClick="openWin2()">
+					</form>
 				</div>
 				<div class="col-sm-4">
 					<h3>Column 3</h3>
