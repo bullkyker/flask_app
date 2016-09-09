@@ -41,6 +41,6 @@ def about():
 
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000)
-    Flask(__name__).run(debug = True, host='0.0.0.0', port=port)
+    run(debug = True, host='0.0.0.0', port=port)
 	
 	#app.run(debug=True)
