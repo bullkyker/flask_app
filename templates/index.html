@@ -3,12 +3,12 @@
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" 
 		integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">		
-
+		<title>Robert Quinn's Python project</title>
 	</head>
 	<body><center>		
 		<div class = "jumbotron">			
 			<div class = "container">
-				<h1><b>Search all kinds of stuff<br>Not as cool as google</b></h1><br>
+				<h1><b>Search all kinds of stuff<br>Really cool search page</b></h1><br>
 				
 				
 			</div>
@@ -33,11 +33,11 @@
 				<div class="col-lg-4">
 					<h3><b>Yelp Search</b></h3>
 					{% if searchresult %}
-						<h2>
+						<h3>
 						{% for business in searchresult %}
-							{{ business.name }}
+							{{ business.name + '' + business.rating}}
 						{% endfor %}
-						</h2>
+						</h3>
 						<a href="{{ url_for('index') }}"> Look-up another </a>
 					{% else %} 
 						<h2>Enter a city and search term I'll yelp search it</h2>
