@@ -34,7 +34,7 @@ def index():
 		return render_template('index.html', weather=local_weather)
 	elif(request.values.get('topic'))!=None and (request.values.get('city'))!=None:
 		term = request.values.get('topic')
-		city = request.vaules.get('city')
+		city = request.values.get('city')
 		businesses = yelp_search(term, city)
 		return render_template('index.html', searchresult=businesses)
 	else:
