@@ -5,11 +5,10 @@
 		integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">		
 
 	</head>
-	<body><center>
-		<div background="153069.jpg" height=10% width= 100%>Welcome</div>
+	<body><center>		
 		<div class = "jumbotron">
 			<div class = "container">
-				<h1>Hello!</h1><br>
+				<h1>Search all kinds of stuff<br>Not as cool as google</h1><br>
 				
 				<a href="{{ url_for('about') }}"> About Page </a>
 			</div>
@@ -17,10 +16,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
-					<h3>Weather</h3>
+					<h3><b>Weather</b></h3>
 					{% if weather %}
 					<h2>{{ weather}}!</h2>
-					<a href="{{ url_for('index') }}"> Look-up another </a>
+					<a href="{{ url_for('index target = _bottom') }}"> Look-up another </a>
 				{% else %} 
 					<h2>enter a location and I'll retrieve the weather</h2>
 					<form action="/" class = "form-inline">
@@ -40,10 +39,18 @@
 					</form>
 				</div>
 				<div class="col-sm-4">
-					<h3>Column 3</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+					<h3><b>Get Stocks</b></h3>
+					<form>
+						<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
+						<input type = "text" name="location" placeholder="Enter your search location here" class="form-control">
+						<input type="submit" value="Yelp Search" class="btn btn-primary">
+					</form>
 				</div>
+			</div>
+		</div>
+		<div class = "bottom">
+			<div class = "container">
+				
 			</div>
 		</div>
 	</body>
