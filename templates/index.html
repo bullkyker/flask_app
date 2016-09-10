@@ -10,7 +10,7 @@
 			<div class = "container">
 				<h1>Search all kinds of stuff<br>Not as cool as google</h1><br>
 				
-				<a href="{{ url_for('about') }}"> About Page </a>
+				
 			</div>
 		</div>
 		<div class="container">
@@ -19,7 +19,7 @@
 					<h3><b>Weather</b></h3>
 					{% if weather %}
 					<h2>{{ weather}}!</h2>
-					<a href="{{ url_for('index' target = bottom) }}"> Look-up another </a>
+					<a href="{{ url_for('index') }}"> Look-up another </a>
 				{% else %} 
 					<h2>enter a location and I'll retrieve the weather</h2>
 					<form action="/" class = "form-inline">
@@ -50,7 +50,7 @@
 		</div>
 		<div class = "bottom">
 			<div class = "container">
-				
+				<a href="{{ url_for('about') }}"> About Page </a>
 			</div>
 		</div>
 	</body>
