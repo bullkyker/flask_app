@@ -19,7 +19,7 @@
 					<h3><b>Weather</b></h3>
 					{% if weather %}
 					<h2>{{ weather}}!</h2>
-					<a href="{{ url_for('index target = _bottom') }}"> Look-up another </a>
+					<a href="{{ url_for('index' target = bottom) }}"> Look-up another </a>
 				{% else %} 
 					<h2>enter a location and I'll retrieve the weather</h2>
 					<form action="/" class = "form-inline">
