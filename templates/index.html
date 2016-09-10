@@ -7,8 +7,9 @@
 	</head>
 	<body><center>		
 		<div class = "jumbotron">
+			<img src = '153069.jpg' />
 			<div class = "container">
-				<h1>Search all kinds of stuff<br>Not as cool as google</h1><br>
+				<h1><b>Search all kinds of stuff<br>Not as cool as google</b></h1><br>
 				
 				
 			</div>
@@ -18,36 +19,41 @@
 				<div class="col-sm-4">
 					<h3><b>Weather</b></h3>
 					{% if weather %}
-					<h2>{{ weather}}!</h2>
-					<a href="{{ url_for('index') }}"> Look-up another </a>
-				{% else %} 
-					<h2>enter a location and I'll retrieve the weather</h2>
-					<form action="/" class = "form-inline">
-						<div class="form-group">
-							<input type = "text" name="weather" placeholder="Enter your location here" class="form-control">
-							<input type = "submit" value="Submit" class="btn btn-primary">
-						</div>
+						<h2>{{ weather}}!</h2>
+						<a href="{{ url_for('index') }}"> Look-up another </a>
+					{% else %} 
+						<h2>Enter a location and I'll retrieve the weather</h2>
+						<form action="/" class = "form-inline">
+							<div class="form-group">
+								<input type = "text" name="weather" placeholder="Enter your location here" class="form-control">
+								<input type = "submit" value="Submit" class="btn btn-primary">
+							</div>
 					</form>
 				{% endif %}
 				</div>
 				<div class="col-sm-4">
-					<h3>Yelp Search</h3>
-					<form>
-						<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
-						<input type = "text" name="location" placeholder="Enter your search location here" class="form-control">
-						<input type="submit" value="Yelp Search" class="btn btn-primary">
-					</form>
+					<h3><b>Yelp Search</b></h3>
+						{% if weather %}
+							<h2>{{ weather}}!</h2>
+							<a href="{{ url_for('index') }}"> Look-up another </a>
+						{% else %} 
+							<h2>Enter a location and I'll retrieve the weather</h2>
+							<form>
+								<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
+								<input type = "text" name="location" placeholder="Enter your search location here" class="form-control">
+								<input type="submit" value="Yelp Search" class="btn btn-primary">
+							</form>
 				</div>
 				<div class="col-sm-4">
 					<h3><b>Get Stocks</b></h3>
 					<form>
-						<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
-						<input type = "text" name="location" placeholder="Enter your search location here" class="form-control">
-						<input type="submit" value="Yelp Search" class="btn btn-primary">
+						<input type = "text" name="topic" placeholder="Enter stock here" class="form-control">						
+						<input type="submit" value="Stock Quotes" class="btn btn-primary">
 					</form>
 				</div>
 			</div>
 		</div>
+		<hr color = 'green'>
 		<div class = "bottom">
 			<div class = "container">
 				<a href="{{ url_for('about') }}"> About Page </a>
