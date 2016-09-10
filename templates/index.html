@@ -30,14 +30,14 @@
 						</form>
 					{% endif %}
 				</div>
-				<div class="col-lg-4">
+				<div class="col-sm-4">
 					<h3><b>Yelp Search</b></h3>
 					{% if searchresult %}
-						<h3>
+						<!--<h3>-->
 						{% for business in searchresult %}
 							{{ business.name }}, {{ business.rating }}
 						{% endfor %}
-						</h3>
+						<!--</h3>-->
 						<a href="{{ url_for('index') }}"> Look-up another </a>
 					{% else %} 
 						<h2>Enter a city and search term I'll yelp search it</h2>
