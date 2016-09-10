@@ -1,18 +1,12 @@
 <!-- http://v4-alpha.getbootstrap.com/ -->
 <html>
 	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
-		<script language="JavaScript">
-		function openWin2() {
-			myWin= open("{{ url_for('index') }}", "displayWindow", 
-			"width=200,height=300,status=no,toolbar=no,menubar=no,resizeable=no");
-		}				
-		</script>
-	
-  
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" 
+		integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">		
 
 	</head>
-	<body background="153069.jpg"><center>
+	<body><center>
+		<div> background="153069.jpg"</div>
 		<div class = "jumbotron">
 			<div class = "container">
 				<h1>Hello!</h1><br>
@@ -42,7 +36,7 @@
 					<form>
 						<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
 						<input type = "text" name="location" placeholder="Enter your search location here" class="form-control">
-						<input type="button" value="Yelp Search" class="btn btn-primary" onClick="openWin2()">
+						<input type="submit" value="Yelp Search" class="btn btn-primary">
 					</form>
 				</div>
 				<div class="col-sm-4">
