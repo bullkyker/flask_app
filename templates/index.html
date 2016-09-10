@@ -36,6 +36,7 @@
 						<!--<h3>-->
 						{% for business in searchresult %}
 							{{ business.name }}, {{ business.rating }}
+							<br>
 						{% endfor %}
 						<!--</h3>-->
 						<a href="{{ url_for('index') }}"> Look-up another </a>
