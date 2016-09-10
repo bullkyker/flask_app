@@ -21,6 +21,7 @@ import os
 #sys.path.append(root)
 from weather import get_location
 from flask import Flask, render_template, request
+from yelp_api import yelp_search
 app = None 
 app = Flask(__name__)
 @app.route("/")
@@ -31,6 +32,11 @@ def index():
 		location = request.values.get('weather')
 		local_weather=get_location(location)
 		return render_template('index.html', weather=local_weather)
+	elif(request.values.get('topic'))!=None and (request.values.get('location'))!=None:
+		term = request.values.get('topic')
+		city = request.vaules.get('location')
+		businesses = yelp_search(term, city)
+		return render_template('index.html', searchresult=businesses)
 	else:
 		return render_template('index.html')
 

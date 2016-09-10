@@ -32,17 +32,21 @@
 				</div>
 				<div class="col-sm-4">
 					<h3><b>Yelp Search</b></h3>
-						{% if weather %}
-							<h2>{{ weather}}!</h2>
-							<a href="{{ url_for('index') }}"> Look-up another </a>
-						{% else %} 
-							<h2>Enter a location and I'll retrieve the weather</h2>
-							<form>
-								<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
-								<input type = "text" name="location" placeholder="Enter your search location here" class="form-control">
-								<input type="submit" value="Yelp Search" class="btn btn-primary">
-							</form>
-						{% endif %}
+					{% if searchresult %}
+						<h2>
+						{% for business in businesses %}
+							{{ business.name}}
+						{% endfor %}
+						</h2>
+						<a href="{{ url_for('index') }}"> Look-up another </a>
+					{% else %} 
+						<h2>Enter a city and search term I'll yelp search it</h2>
+						<form>
+							<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
+							<input type = "text" name="location" placeholder="Enter your search location here" class="form-control">
+							<input type="submit" value="Yelp Search" class="btn btn-primary">
+						</form>
+					{% endif %}
 				</div>
 				<div class="col-sm-4">
 					<h3><b>Get Stocks</b></h3>
@@ -56,7 +60,7 @@
 		<hr color = 'green'>
 		<div class = "bottom">
 			<div class = "container">
-				<a href="{{ url_for('about') }}"> About Page </a>
+				<a href="{{ url_for('about') }}"> About </a>
 			</div>
 		</div>
 	</body>

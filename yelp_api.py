@@ -25,20 +25,24 @@ def yelp_search(param_term, param_city):
     'lang': 'en',
     'sort': 2	
 	}
-	#businesses = []
+	businesses = []
+	counter = 1
 	response = client.search(param_city, **params)	 
 	for business in response.businesses:
-		print(business.name, "Rating ", business.rating)
-		# businesses.append({
-		    # "name":business.name, 
-		    # "rating": business.rating, 
-		    # "phone": business.phone
-		#})
-	#return businesses
+		#print(business.name, "Rating ", business.rating)
+		businesses.append({
+		    "name":business.name, 
+		    "rating": business.rating, 
+		    "phone": business.phone
+		})
+		if counter >= 3:
+			break
+		counter += 1
+	return businesses
 	
-param_term = input("Enter a search term: ")
-param_city = input("Enter a search city: ").upper()
+#param_term = input("Enter a search term: ")
+#param_city = input("Enter a search city: ").upper()
 #businesses = yelp_search(param_term, param_city)
-yelp_search(param_term, param_city)
+#yelp_search(param_term, param_city)
 
 #print(businesses)
