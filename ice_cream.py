@@ -18,7 +18,10 @@ flavors = ["Vanilla",
 		"Lemon",
 		"Tomato",
 		"Motor Oil",
-		"Whikey"]
+		"Whiskey",
+		"Cantalope",
+		"Liver",
+		"Dog sweat"]
 
 # toppings
 toppings = ["Peanuts",
@@ -27,7 +30,7 @@ toppings = ["Peanuts",
           "Cherries",
           "Whipped Cream",
 		  "Hot Sauce",
-		  "Pickels",
+		  "Pickles",
 		  "Frog Eyes",
 		  "Slugs",
 		  "Dirt",
@@ -42,7 +45,11 @@ toppings = ["Peanuts",
 		  "beets", 
 		  "French Fries",
 		  "pretzels",
-		  "a skunk"]
+		  "a skunk",
+		  "Popcorn",
+		  "Earthworms",
+		  "gummy bears"]
+		  
 #for num in range(1,50):
 def icecream():
 	flavor = random.choice(flavors)

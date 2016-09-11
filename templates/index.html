@@ -146,9 +146,9 @@ VHHHHMMMMA:I::.. . .  . . .. .:.::I:IHHHIMMMMHI:.. . AHMMMMMMMM:HHHHHHHH
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" 
 		integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">	
-		<style>a:link {text-decoration:none; color:Navy size:18px font-weight: bold}
-       a:visited {text-decoration:none; color:magenta size:18px font-weight: bold}
-       a:hover {text-decoration:underline; color:Salmon; font-weight: bold }</style>
+		<style>a:link {text-decoration:none; color:Yellow; size:18px; font-weight:bold}
+       a:visited {text-decoration:none; color:Chartreuse; size:18px; font-weight:bold}
+       a:hover {text-decoration:underline; color:Salmon; font-weight:bold }</style>
 
 		<title>Robert Quinn's Python project</title>
 	</head>
@@ -166,9 +166,9 @@ VHHHHMMMMA:I::.. . .  . . .. .:.::I:IHHHIMMMMHI:.. . AHMMMMMMMM:HHHHHHHH
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
-					<><font color = "LightSteelBlue"><h3><b><u><font color="Navy">Weather</font></u></b></h3>
+					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Weather</font></u></b></h3>
 					{% if weather %}
-						<h2>{{ weather}}!</h2>
+						<h2>{{ weather }}!</h2>
 						<a href="{{ url_for('index') }}"> Look-up another </a>
 					
 					{% else %} 
@@ -181,9 +181,9 @@ VHHHHMMMMA:I::.. . .  . . .. .:.::I:IHHHIMMMMHI:.. . AHMMMMMMMM:HHHHHHHH
 						</form>
 					{% endif %}
 					
-				</div>
+				</div>				
 				<div class="col-sm-4">
-					<<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Yelp Search</font></u></b></h3>
+					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Yelp Search</font></u></b></h3>
 					{% if searchresult %}
 						
 						<font color='Ivory'>
@@ -197,22 +197,21 @@ VHHHHMMMMA:I::.. . .  . . .. .:.::I:IHHHIMMMMHI:.. . AHMMMMMMMM:HHHHHHHH
 						</ol>
 						</font>
 						
-						<a href="{{ url_for('index') }}" > Look-up another </a>
+						<a href="{{ url_for('index') }}"> Look-up another </a>
 					{% else %} 
 						<h3>Enter a search term and city, and I'll yelp search it</h3><br>
-						<form>
+						<form><div class="form-group">
 							<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
 							<input type = "text" name="city" placeholder="Enter your search location here" class="form-control">
 							<input type="submit" value="Yelp Search" class="btn btn-primary">
+							</div>
 						</form>
 					{% endif %}
-				</font>
+					</font>
 				</div>
-				<br>
 				<div class="col-sm-4">
 					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Amazon Search</b></font></u></h3>
-					{% if amazonresult %}
-						
+					{% if amazonresult %}						
 						<font color='Ivory'>
 						<ol>
 						{% for business in searchresult %}
@@ -239,25 +238,16 @@ VHHHHMMMMA:I::.. . .  . . .. .:.::I:IHHHIMMMMHI:.. . AHMMMMMMMM:HHHHHHHH
 <div class="row">				
 				<div class="col-sm-4">
 					<p aligh="center"><<font color = "LightSteelBlue"><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>
-					{% if gottip %}
+					{% if gottip %}				
 						
-						<font color='Ivory'>
-						<ol>
-						{% for business in searchresult %}
-							<li>Name: 
-							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.phone }}
-							</li>
-							<hr color='green'>
-						{% endfor %}
-						</ol>
-						</font>
+						<h5>{{ gottip }}</h5>
 						
-						<a href="{{ url_for('index') }}"> Look-up another </a>
+						<a href="{{ url_for('index') }}"> Try a different amount </a>
 					{% else %} 
 						<h3>Please provide amount of the bill to get suggested tip amounts</h3><br><br>
 						<form>							
 							<!-- Way cool HTML5 input -->
-							<input type = "number" name="amount" placeholder="Enter the bill price here (numbers only)" class="form-control">
+							<input type="number" step="0.01" name="amount" placeholder="Enter the bill price here (numbers only)" class="form-control">
 							<input type="submit" value="What to tip" class="btn btn-primary">
 						</form>
 					{% endif %}
@@ -290,12 +280,13 @@ VHHHHMMMMA:I::.. . .  . . .. .:.::I:IHHHIMMMMHI:.. . AHMMMMMMMM:HHHHHHHH
 				<div class="col-sm-4">
 					<p aligh="center"><u><font color="Navy"><<h3><b>Ice Cream</b></h3></font></u></p>
 					{% if icecream %}
-						<!--<h3>-->
+						
 						<font color='Ivory'>
 							<h3>{{ icecream}}</h3>
 						</font>
-						<!--</h3>-->
+						<br><center>
 						<a href="{{ url_for('index') }}"> Make another sundae </a>
+						</center>
 					{% else %} 
 						<h3>I can randomly design a sundae</h3><br><br>
 					<form>

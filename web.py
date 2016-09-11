@@ -5,7 +5,7 @@
 	git push
 	remember pip freeze
 	https://polar-peak-85361.herokuapp.com/ | https://git.heroku.com/polar-peak-85361.git
-	heroku apps:rename bullkyker-weather
+	heroku apps:rename bullkyker-project
 """
 
 
@@ -23,6 +23,7 @@ from weather import get_location
 from flask import Flask, render_template, request
 from yelp_api import yelp_search
 from ice_cream import icecream
+from tip_bullkyker import suggest_tip
 app = None 
 app = Flask(__name__)
 @app.route("/")
@@ -38,12 +39,16 @@ def index():
 		return render_template('index.html', weather=local_weather)
 	elif(request.values.get('topic'))!=None:
 		term = request.values.get('topic')
-		city = request.values.get('location')
+		city = request.values.get('city')
 		businesses = yelp_search(term, city)
 		return render_template('index.html', searchresult=businesses)
 	elif(request.values.get('icecream'))!=None:
 		sundae = icecream()
 		return render_template('index.html', icecream=sundae)
+	elif(request.values.get('amount'))!=None:
+		tip = request.values.get('amount')
+		tip_suggest = suggest_tip(tip)
+		return render_template('index.html', gottip=tip_suggest)
 	else:
 		return render_template('index.html')
 
