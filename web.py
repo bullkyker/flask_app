@@ -22,21 +22,28 @@ import os
 from weather import get_location
 from flask import Flask, render_template, request
 from yelp_api import yelp_search
+from ice_cream import icecream
 app = None 
 app = Flask(__name__)
 @app.route("/")
 def index():	
 	location = None
 	local_weather = None
+	term = None
+	city = None
+	businesses = None
 	if(request.values.get('weather'))!=None:
 		location = request.values.get('weather')
 		local_weather=get_location(location)
 		return render_template('index.html', weather=local_weather)
-	elif(request.values.get('topic'))!=None and (request.values.get('city'))!=None:
+	elif(request.values.get('topic'))!=None:
 		term = request.values.get('topic')
-		city = request.values.get('city')
+		city = request.values.get('location')
 		businesses = yelp_search(term, city)
 		return render_template('index.html', searchresult=businesses)
+	elif(request.values.get('icecream'))!=None:
+		sundae = icecream()
+		return render_template('index.html', icecream=sundae)
 	else:
 		return render_template('index.html')
 

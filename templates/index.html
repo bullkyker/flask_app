@@ -1,68 +1,318 @@
+<!DOCTYPE html>
+
+<!--
+Set your font pitch at 6.  I look even better
+
+                             . ...
+                         .''.' .    '.
+                    . '' ".'.:I:.'..  '.
+                  .'.:.:..,,:II:'.'.'.. '.
+                .':.'.:.:I:.:II:'.'.'.'.. '.
+              .'.'.'.'::.:.:.:I:'.'.'.'. .  '
+             ..'.'.'.:.:I::.:II:.'..'.'..    .
+            ..'.'':.:.::.:.::II::.'.'.'.'..   .
+           ..'.'.'.:.::. .:::II:..'.'.'.'.'.   .
+          .':.''.':'.'.'.:.:I:'.'.'.'.'.. '..  ..
+          ':. '.':'. ..:.::.::.:.'..'  ':.'.'.. ..
+         .:.:.':'.   '.:':I:.:.. .'.'.  ': .'.. . ..
+         '..:.:'.   .:.II:.:..   . .:.'. '.. '. .  ..
+        .. :.:.'.  .:.:I:.:. .  . ..:..:. :..':. .  '.
+       .:. :.:.   .:.:I:.:. .    . ..:I::. :: ::  .. ..
+       .. :'.'.:. .:.:I:'.        ..:.:I:. :: ::.   . '.
+       '..:. .:.. .:II:'         ,,;IIIH.  ::. ':.      .
+      .:.::'.:::..:.AII;,      .::",,  :I .::. ':.       .
+      :..:'.:II:.:I:  ,,;'   ' .;:FBT"X:: ..:.. ':.    . .
+     .. :':III:. :.:A"PBF;.  . .P,IP;;":: :I:..'::. .    ..
+     . .:.:II: A.'.';,PP:" .  . ..'..' .: :.::. ':...  . ..
+     . .: .:IIIH:.   ' '.' .  ... .    .:. :.:.. :...    .'
+     . .I.::I:IIA.        ..   ...    ..::.'.'.'.: ..  . .
+      .:II.'.':IA:.      ..    ..:.  . .:.: .''.'  ..  . .
+     ..::I:,'.'::A:.  . .:'-, .-.:..  .:.::AA.. ..:.' .. .
+      ':II:I:.  ':A:. ..:'   ''.. . : ..:::AHI: ..:..'.'.
+     .':III.::.   'II:.:.,,;;;:::::". .:::AHV:: .::'' ..
+     ..":IIHI::. .  "I:..":;,,,,;;". . .:AII:: :.:'  . .
+     . . IIHHI:..'.'.'V::. ":;;;"   ...:AIIV:'.:.'  .. .
+      . . :IIHI:. .:.:.V:.   ' ' . ...:HI:' .:: :. .  ..
+      . .  ':IHII:: ::.IA..      .. .A .,,:::' .:.    .
+      :.  ...'I:I:.: .,AHHA, . .'..AHIV::' . .  :     ..
+      :. '.::::II:.I:.HIHHIHHHHHIHHIHV:'..:. .I.':. ..  '.
+   . . .. '':::I:'.::IHHHHHHHHMHMHIHI. '.'.:IHI..  '  '  '.
+    ':... .  ''" .::'.HMHI:HHHHMHHIHI. :IIHHII:. . . .    .
+     :.:.. . ..::.' .IV".:I:IIIHIHHIH. .:IHI::'.': '..  .  .
+   . .:.:: .. ::'.'.'..':.::I:I:IHHHIA.'.II.:...:' .' ... . '..
+  '..::::' ...::'.IIHII:: .:.:..:..:III:.'::' .'    .    ..  . .
+  '::.:' .''     .. :IIHI:.:.. ..: . .:I:"' ...:.:.  ..    .. ..
+     .:..::I:.  . . . .IHII:.:'   .. ..".::.:II:.:. .  ...   . ..
+  .. . .::.:.,,...-::II:.:'    . ...... . .. .:II:.::  ...  .. ..
+   ..:.::.I .    . . .. .:. .... ...:.. . . ..:.::.   :..   . ..
+    .'.::I:.      . .. ..:.... . ..... .. . ..::. .. .I:. ..' .
+  .'':.: I.       . .. ..:.. .  . .. ..... .:. .:.. .:I.'.''..
+  . .:::I:.       . . .. .:. .    .. ..  . ... .:.'.'I'  .  ...
+  . ::.:I:..     . . . ....:. . .   .... ..   .:...:.:.:. ''.''
+  '.'::'I:.       . .. ....:. .     .. . ..  ..'  .'.:..:..    '
+        :. .     . .. .. .:.... .  .  .... ...   .  .:.:.:..    '.
+        :.      .  . . .. .:.... . . ........       .:.:.::. .    .
+        :. .     . . . . .. .::..:  . ..:.. .        ::.:.:.. .    .
+        :.. .    . . .  . .. ..:.:  .. .. .:. ..     ':::.::.:. .   .
+        ':.. .  . . . .. .. ...::' .. ..  . .:. .     V:I:::::.. .   :.
+         ::. .  . .. .. ... .:.::  .. .  . .. .. .     VI:I:::::..   ''B
+          :.. .   . .. ..:.. ..I:... . .  . .. ... .    VII:I:I:::. .'::
+          ':.. . . . .. ..:..:.:I:.:. .  . .. . .:. .    VHIII:I::.:..':
+           ::..   . . .. ..:..:.HI:. .      . . .... .   :HHIHIII:I::..:
+           ':. .  . .. .. ..:.:.:HI:.    . . .. ..... .   HHHHIHII:I::.'
+            :.. .  . . .. .:.:.:.HI:.      . . .. ... .   IHHHHIHHIHI:'
+             :..  .  . . .. ..:..IH:.     . . .. .. ,,, . 'HHHHHHHHI:'
+             ':..   . . .. ..:.:.:HI..   .  . .. . :::::.  MIH:"""'
+              :. . .  . .. ..::.:.VI:.     . . .. .:::'::. HIH
+               :..  .  . .. .:.:.:.V:.    . . . ...::I"A:. HHV
+                :. .  .  . .. ..:.:.V:.     . . ....::I::'.HV:
+                 :. .  . . . .. .:..II:.  . . . ....':::' AV.'
+                  :.. . . .. ... .:..VI:. . . .. .:. ..:.AV'.
+                  ':.. . .  .. ..:.:.:HAI:.:...:.:.:.:.AII:.
+                   I:. .  .. ... .:.:.VHHII:..:.:..:A:'.:..
+                   IA..  . . .. ..:.:.:VHHHHIHIHHIHI:'.::.
+                   'HA:.  . . .. ..:.:.:HHHIHIHHHIHI:..:.
+                    HIA: .  . . .. ...:.VHHHIHIIHI::.:...
+                    HIHI:. .  .. ... .::.HHHIIHIIHI:::..
+                    HII:.:.  .  .. ... .::VHHIHI:I::.:..
+                    AI:..:..  .  . .. ..:.VHIII:I::.:. .
+                   AI:. ..:..  .  . .. ..' VHIII:I;... .
+                  AI:. .  .:.. .  .  . ...  VHIII::... .
+                .A:. .      :.. .  . .. .:.. VHII::..  .
+               A:. . .       ::. .. .. . .:.. "VHI::.. .
+             .:.. .  .        :.. .:..... .::.. VHI:..
+            ... . .  .     . . :.:. ..:. . .::.. VI:..  .
+           .. .. .  .    . . ...:... . .. . .:::. V:..  .
+          '.. ..  .   .  .. ..:::.... .:. . ..::.. V..  .
+        . . .. . .   . . .. ..:::A. ..:. . . .::.. :..
+       . .. .. .. . .  . ... ..::IA.. .. . .  ..::. :..  .
+      .. .. ... . .  .. .... .:.::IA. . .. . ..:.::. :.  .
+     . . . .. .   . . .. ..:..:.::IIA. . .  .. .:.::. :. .
+    .. . .  .   . . .. ... ..:.::I:IHA. .  . . ..:.::. . .
+   .: ..  .  .   . . ... .:.. .:I:IIHHA. .  . .. .::I:. .
+  .::.  .     . . .. ..:. .::.:IIHIIHHHA.  .  .. ..:I:. . .
+  A::..      .  .  ...:..:.::I:IHIHIHHHHA.  .  . ..::I:. .
+ :HI:.. .       . .. .:.:.::I:IHIHIIHIHHHA. .   .. .::I:. ..
+ AI:.. .. .    . .. .:.:.::II:IHIIIHIHIHHHA.  .  . ..::I:. ..
+:HI:.. . .   .  . .. .::.:I:IHIHIIIHIHIIHHHA..  . .. .::I:. ..
+AI:.:.. .  .  .  ... .::.::I:IHIIHIHIHIHIHIHHA. .  . ..::I:. .
+HI:. .. . .  .  . .. .:..::IIHIHIHIIIIWHIIHHMWA.  . . .:::I:. . .
+HI:.. . .  .   . .. ..:.::I:IIHHIIHIHIHIHHMMW"  '.. . ..:::II: . .
+HI::.. .  .   .  .. .:..:::IIHIHIIWIWIIWMWW" .    .. . ..::III: .  .
+HI::... . . .  . ... ..:.:::IIHIWIWIWMWMWW. .  .   . .. .:.:III. .   .
+II::.:.. . .  .  .. ......:..IHWHIWWMWMW".. . . . . '... .:.:IHI:..    .
+II:I::.. .  .   .  . .....::.:IHWMWWWMW:.. .  .  . .  .:..:::IIHII..
+:II:.:.:.. .  .   . ......:.:.:IWWMWWW:.:.. .  .  .  . :...:.:IHHI:..
+ HI::.:. . . .  .  . ...:.::.::.VWMWW::.:.:.. .  . .. . :.. ..:IHHI::.'-
+ HII::.:.. .  .  . .. .:..:.'.  'WWWI::.::.:.. . .  . .. ':...:II:IIII::
+ III::.:... .  .  . ...:.:... .   WII:I::.:.. .  .  .. . . :.:::...::.::
+  VII::.:.. . . . .. ...:....      VHI:I::.:.. .  . ... .. .::.:..:.:..:
+   VII::.:.. . .  . ..:.::.. .     :HHII:I::.:.. . . .. ..  .'::':......
+   III:I::.. .. . . .. .:.:.. .    :VHIHI:I::.:... . . .. .. .':. .. .AH
+  AA:II:I::.. . . .  .. ..:.. . .  ::HHIHII:I::.:... .. .. ... .:.::AHHH
+ AHH:I:I::.:.. .  . .. ..:.:.. .   ::VHHHVHI:I::.:.:.. ..:. .::.A:.AHHHM
+ HHHAII:I::.:.. . . . .. ..:.. . . :::HIHIHIHII:I::.:.. .. .:. ..AHHMMM:
+AHHHH:II:I::.:.. . . .. ..:.:.. . .:I:MMIHHHIHII:I:::.:. ..:.:.AHHHMMM:M
+HHHHHA:II:I::.. .. . . .. .:... . .:IIVMMMHIHHHIHII:I::. . .. AHHMMMM:MH
+HHHHHHA:I:I:::.. . . . ... ..:.. ..:IHIVMMHHHHIHHHIHI:I::. . AHMMMMM:HHH
+HHHHHMM:I::.:.. . . . .. ...:.:...:IIHHIMMHHHII:.:IHII::.  AHMMMMMM:HHHH
+HHHHHMMA:I:.:.:.. . . . .. ..:.:..:IIHHIMMMHHII:...:::.:.AHMMMMMMM:HHHHH
+HHHHHMMMA:I::... . . . . .. ..:.::.:IHHHIMMMHI:.:.. .::AHMMMMMMM:HHHHHHH
+VHHHHMMMMA:I::.. . .  . . .. .:.::I:IHHHIMMMMHI:.. . AHMMMMMMMM:HHHHHHHH
+ HHHMMMMMM:I:.:.. . .  . . ...:.:IIHIHHHIMMMMMHI:.AHMMMMMMMMM:HHHHHHHHHH
+ HHHHMMMMMA:I:.:.. .  .  . .. .:IIHIHHHHIMMMMMH:AMMMMMMMMMMM:HHHHHHHHHHH
+ VHHHMMMMMMA:I:::.:. . . . .. .:IHIHHHHHIMMMV"AMMMMMMMMMMMM:HHHHHHHHHHHH
+  HHHHHMMMMMA:I::.. .. .  . ...:.:IHHHHHHIM"AMMMMMMMMMMMM:HHHHHHHHHHHHHH
+  VHHHHHMMMMMA:I:.:.. . . .  .. .:IHIHHHHI:AMMMMMMMMMMMIHHHHHHHHHHHHHHHH
+   VHHHHHMMMMMA:I::.:. . .  .. .:.:IHHHV:MMMMMIMMMMMMMMMMMMMHHHHHHHHV::.
+    VHHHHMMMMMMA:::.:..:.. . .. .:::AMMMMMMMM:IIIIIHHHHHHHHHHHHHHHV:::..
+     HHHHHMMMIIIA:I::.:.:..:... AMMMMMMMMMM:IIIIIIHHHHHHHHHHHHHHHV::::::
+     VHHHHMMIIIIMA:I::::.::..AMMMMMMMMMMM:IIIIIIIHHHHHHHHHHHHHHV::::::::
+      HHHHMIIIIMMMA:II:I::AIIIMMMMMMMMMM:IIIIIIIHHHHHHHHHHHHHHV:::::::::
+      VHHHHIIIMMMMMMA:I:AIIIIIIMMMMMM:IIIIIIIIHHHHHHHHHHHHHHV::::::::"'
+       HHHHHIIMMMMMMIMAAIIIIIIIIMMM:IIIIIIIIHHHHHHHHHHHHHHHV:::::""'
+       VHHHIIIIMMMMIIIIIIIIIIIIII:IIIIIIIIHHHHHHHHHHHHHHHV::""'
+        VHHIIIMMMMMIIIIIIIIIIIIIIIIIIIIIHHHHHHHHHHHHHHHV
+         VHHIMMMMMMMIIIIIIIIIIIIIIIIIHHHHHHHHHHHHHV
+          VHHHMMMMMMMMIIIIIIIIIIIHHHHHHHHHHHV
+           VHHHMMMMMMMMMMMMMHHHHHHHHHHHHHV
+
+
+
+
+-->
 <!-- http://v4-alpha.getbootstrap.com/ -->
 <html>
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" 
-		integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">		
+		integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">	
+		<style>a:link {text-decoration:none; color:Navy size:18px font-weight: bold}
+       a:visited {text-decoration:none; color:magenta size:18px font-weight: bold}
+       a:hover {text-decoration:underline; color:Salmon; font-weight: bold }</style>
+
 		<title>Robert Quinn's Python project</title>
 	</head>
 	<body background='http://www.geocities.ws/nhbludog/rextree.jpg'><center>		
-		<div class = "jumbotron">			
+		<div bgcolor = 'lightsteelblue'>			
 			<div class = "container">
 				<h1><b>Search all kinds of stuff<br>We'll find it and tree it for you</b></h1><br>
+				<p align=left><img src='http://www.geocities.ws/nhbludog/an_usa_flag_lg.gif'></p>
+
 				<img src="http://www.geocities.ws/nhbludog/Joe.gif" />
 				
 			</div>
-		</div>
+		</div>	
+		</center><hr color='magenta'>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
-					<h3><b>Weather</b></h3>
+					<><font color = "LightSteelBlue"><h3><b><u><font color="Navy">Weather</font></u></b></h3>
 					{% if weather %}
 						<h2>{{ weather}}!</h2>
 						<a href="{{ url_for('index') }}"> Look-up another </a>
+					
 					{% else %} 
-						<h2>Enter a location and I'll retrieve the weather</h2>
+						<h3>Enter a location and I'll retrieve the weather</h3><br> <!-- Trying to line shit up -->
 						<form action="/" class = "form-inline">
 							<div class="form-group">
-								<input type = "text" name="weather" placeholder="Enter your location here" class="form-control">
-								<input type = "submit" value="Submit" class="btn btn-primary">
+								<input type = "text" name="weather" placeholder="Enter your location here" class="form-control"><br><br>
+								<input type = "submit" value="Get Weather" class="btn btn-primary">
 							</div>
 						</form>
 					{% endif %}
+					
 				</div>
 				<div class="col-sm-4">
-					<h3><b>Yelp Search</b></h3>
+					<<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Yelp Search</font></u></b></h3>
 					{% if searchresult %}
-						<!--<h3>-->
+						
+						<font color='Ivory'>
+						<ol>
 						{% for business in searchresult %}
-							{{ business.name }}, {{ business.rating }}
-							<br>
+							<li>Name: 
+							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.phone }}							
+							</li>
+							<hr color='green'>
 						{% endfor %}
-						<!--</h3>-->
-						<a href="{{ url_for('index') }}"> Look-up another </a>
+						</ol>
+						</font>
+						
+						<a href="{{ url_for('index') }}" > Look-up another </a>
 					{% else %} 
-						<h2>Enter a city and search term I'll yelp search it</h2>
+						<h3>Enter a search term and city, and I'll yelp search it</h3><br>
 						<form>
 							<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
 							<input type = "text" name="city" placeholder="Enter your search location here" class="form-control">
 							<input type="submit" value="Yelp Search" class="btn btn-primary">
 						</form>
 					{% endif %}
+				</font>
+				</div>
+				<br>
+				<div class="col-sm-4">
+					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Amazon Search</b></font></u></h3>
+					{% if amazonresult %}
+						
+						<font color='Ivory'>
+						<ol>
+						{% for business in searchresult %}
+							<li>Name: 
+							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.phone }}
+							</li>
+							<hr color='green'>
+						{% endfor %}
+						</ol>
+						</font>
+						
+						<a href="{{ url_for('index') }}"> Look-up another </a>
+					{% else %} 
+						<h3>Lets try to find something on Amazon</h3><br>
+						<form>
+							<input type = "text" name="amazontopic" placeholder="Enter your search topic here" class="form-control">
+							<br>
+							<input type="submit" value="Amazon Search" class="btn btn-primary">
+						</form>
+					{% endif %}
+				</font>
+				</div>
+</div>
+<div class="row">				
+				<div class="col-sm-4">
+					<p aligh="center"><<font color = "LightSteelBlue"><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>
+					{% if gottip %}
+						
+						<font color='Ivory'>
+						<ol>
+						{% for business in searchresult %}
+							<li>Name: 
+							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.phone }}
+							</li>
+							<hr color='green'>
+						{% endfor %}
+						</ol>
+						</font>
+						
+						<a href="{{ url_for('index') }}"> Look-up another </a>
+					{% else %} 
+						<h3>Please provide amount of the bill to get suggested tip amounts</h3><br><br>
+						<form>							
+							<!-- Way cool HTML5 input -->
+							<input type = "number" name="amount" placeholder="Enter the bill price here (numbers only)" class="form-control">
+							<input type="submit" value="What to tip" class="btn btn-primary">
+						</form>
+					{% endif %}
+					</font>
 				</div>
 				<div class="col-sm-4">
-					<h3><b>Get Stocks</b></h3>
+					<p aligh="center"><u><font color="Navy"><<h3><b>Get Stocks</b></h3></font></u></p>
+					{% if stocks %}
+						<!--<h3>-->
+						<font color='Ivory'>
+						<ol>
+						{% for business in searchresult %}
+							<li>Name: 
+							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.phone }}
+							</li>
+							<hr color='green'>
+						{% endfor %}
+						</ol>
+						</font>
+						<!--</h3>-->
+						<a href="{{ url_for('index') }}"> Look-up another </a>
+					{% else %} 
+						<h3>Enter a stock Code and we'll look it up</h3><br><br><br>
 					<form>
 						<input type = "text" name="topic" placeholder="Enter stock here" class="form-control">						
 						<input type="submit" value="Stock Quotes" class="btn btn-primary">
 					</form>
+					{% endif %}
 				</div>
-			</div>
-		</div>
+				<div class="col-sm-4">
+					<p aligh="center"><u><font color="Navy"><<h3><b>Ice Cream</b></h3></font></u></p>
+					{% if icecream %}
+						<!--<h3>-->
+						<font color='Ivory'>
+							<h3>{{ icecream}}</h3>
+						</font>
+						<!--</h3>-->
+						<a href="{{ url_for('index') }}"> Make another sundae </a>
+					{% else %} 
+						<h3>I can randomly design a sundae</h3><br><br>
+					<form>
+						<input type="hidden" name="icecream" value="icecream"><br><br>						
+						<center><input type="submit" value="Make a sundae" class="btn btn-primary"></center>
+					</form>
+					{% endif %}
+				</div>
+				
+</div>
 		<hr color = 'green'>
-		<div class = "bottom">
+		<div class = "jumbotron">
+			<center>
 			<div class = "container">
-				<a href="{{ url_for('about') }}"> About </a>
+				<font color='Salmon'><a class='Fred' href="{{ url_for('about') }}"> About </a></font>
 			</div>
+			</center>
 		</div>
 	</body>
 </html>
