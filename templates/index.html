@@ -41,33 +41,36 @@
 						</form>
 					{% endif %}
 					
-				</div>				
+				</div>
+			
 				<div class="col-sm-4">
 					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Yelp Search</font></u></b></h3>
-					{% if searchresult %}
-						
+					{% if searchresult %}						
 						<font color='Ivory'>
 						<ol>
 						{% for business in searchresult %}
-							<li>Name: 
-							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.phone }}							
+							<li><img src= {{ business.image }} /><br> Name:<b> 
+							<a href ={{ business.site }} target = _window> {{ business.name }}</a></b><br>Rating: {{ business.rating }} &emsp;&emsp; <img src= {{ business.stars }} />
+							<br>Address: {{ business.address }}
+							<br>City: {{ business.city }}
+							<br>Phone: {{ business.phone }}								
 							</li>
 							<hr color='green'>
 						{% endfor %}
 						</ol>
 						</font>
 						
-						<a href="{{ url_for('index') }}"> Look-up another </a>
+						<a href= {{ url_for('index') }} > Look-up another </a>
 					{% else %} 
 						<h3>Enter a search term and city, and I'll yelp search it</h3><br>
-						<form><div class="form-group">
-							<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
-							<input type = "text" name="city" placeholder="Enter your search location here" class="form-control">
-							<input type="submit" value="Yelp Search" class="btn btn-primary">
+						<form>
+							<div class="form-group">
+								<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
+								<input type = "text" name="city" placeholder="Enter your search location here" class="form-control">
+								<input type="submit" value="Yelp Search" class="btn btn-primary">
 							</div>
 						</form>
-					{% endif %}
-					</font>
+					{% endif %}					
 				</div>
 				<div class="col-sm-4">
 					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Amazon Search</b></font></u></h3>
@@ -120,9 +123,9 @@
 						<font color='Ivory'>
 						<ol>
 						{% for business in searchresult %}
-							<li>Name: 
-							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.phone }}
-							<img src = '''{{ business.image_url }} '''/>
+							<li>{{ business.image_url }} <br>>Name: 
+							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.image_url }}
+							
 							</li>
 							<hr color='green'>
 						{% endfor %}

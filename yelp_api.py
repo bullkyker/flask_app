@@ -23,7 +23,8 @@ def yelp_search(param_term, param_city):
 	params = {
     'term': param_term,
     'lang': 'en',
-    'sort': 2	
+    'sort': 2,
+	'limit': 3
 	}
 	businesses = []
 	counter = 1
@@ -34,8 +35,12 @@ def yelp_search(param_term, param_city):
 		businesses.append({
 		    "name":business.name, 
 		    "rating": business.rating, 
+			"stars": business.rating_img_url,
 		    "phone": business.phone,	
-			"image": business.image_url
+			"image": business.image_url,
+			"site": business.url,
+			"address": business.location.display_address[0],
+			"city": business.location.display_address[1]
 		})
 		if counter >= 3:
 			break
