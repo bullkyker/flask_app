@@ -49,7 +49,7 @@
 						<font color='Ivory'>
 						<ol>
 						{% for business in searchresult %}
-							<li><img src= {{ business.image }} /><br> Name:<b> 
+							<li>&emsp;&emsp;<img src= {{ business.image }} /><br> Name:<b> 
 							<a href ={{ business.site }} target = _window> {{ business.name }}</a></b><br>Rating: {{ business.rating }} &emsp;&emsp; <img src= {{ business.stars }} />
 							<br>Address: {{ business.address }}
 							<br>City: {{ business.city }}
@@ -100,7 +100,7 @@
 </div>
 <div class="row">				
 				<div class="col-sm-4">
-					<p aligh="center"><<font color = "LightSteelBlue"><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>
+					<p aligh="center"><font color = "LightSteelBlue"><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>
 					{% if gottip %}				
 						
 						<h5>{{ gottip }}</h5>
@@ -117,7 +117,7 @@
 					</font>
 				</div>
 				<div class="col-sm-4">
-					<p aligh="center"><u><font color="Navy"><<h3><b>Get Stocks</b></h3></font></u></p>
+					<p aligh="center"><u><font color="Navy"><h3><b>Get Stocks</b></h3></font></u></p>
 					{% if stocks %}
 						<!--<h3>-->
 						<font color='Ivory'>
@@ -142,7 +142,7 @@
 					{% endif %}
 				</div>
 				<div class="col-sm-4">
-					<p aligh="center"><u><font color="Navy"><<h3><b>Ice Cream</b></h3></font></u></p>
+					<p aligh="center"><u><font color="Navy"><h3><b>Ice Cream</b></h3></font></u></p>
 					{% if icecream %}
 						
 						<font color='Ivory'>
