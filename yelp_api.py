@@ -34,7 +34,7 @@ def yelp_search(param_term, param_city):
 		businesses.append({
 		    "name":business.name, 
 		    "rating": business.rating, 
-		    "phone": business.phone	
+		    "phone": business.phone,	
 			"image": business.image_url
 		})
 		if counter >= 3:
