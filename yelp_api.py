@@ -27,7 +27,7 @@ def yelp_search(param_term, param_city):
 	'limit': 3
 	}
 	businesses = []
-	counter = 1
+	
 	response = client.search(param_city, **params)
 	
 	for business in response.businesses:
@@ -42,9 +42,7 @@ def yelp_search(param_term, param_city):
 			"address": business.location.display_address[0],
 			"city": business.location.display_address[1]
 		})
-		if counter >= 3:
-			break
-		counter += 1
+		
 	return businesses
 	
 # param_term = input("Enter a search term: ")
