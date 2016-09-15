@@ -31,17 +31,36 @@ def yelp_search(param_term, param_city):
 	response = client.search(param_city, **params)
 	
 	for business in response.businesses:
-		#print(business.name, "Rating ", business.rating)
-		businesses.append({
-		    "name":business.name, 
-		    "rating": business.rating, 
-			"stars": business.rating_img_url,
-		    "phone": business.phone,	
-			"image": business.image_url,
-			"site": business.url,
-			"address": business.location.display_address[0],
-			"city": business.location.display_address[1]
-		})
+		if len(business.location.display_address) > 1:
+			businesses.append({"name":business.name, 
+				"rating": business.rating, 
+				"stars": business.rating_img_url, 
+				"phone": business.phone, 
+				"image": business.image_url, 
+				"site": business.url, 			
+				"address": business.location.display_address[0], 
+				"city": business.location.display_address[1]		
+			})
+		elif len(business.location.display_address) > 0:
+			businesses.append({"name":business.name, 
+				"rating": business.rating, 
+				"stars": business.rating_img_url, 
+				"phone": business.phone, 
+				"image": business.image_url, 
+				"site": business.url, 			
+				"address": business.location.display_address[0], 
+				"city": None
+			})
+		else:
+			businesses.append({"name":business.name, 
+				"rating": business.rating, 
+				"stars": business.rating_img_url, 
+				"phone": business.phone, 
+				"image": business.image_url, 
+				"site": business.url,
+				"address": None,
+				"city": None
+			})
 		
 	return businesses
 	
