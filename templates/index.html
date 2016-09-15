@@ -103,16 +103,16 @@
 					<p aligh="center"><font color = "GoldenRod  "><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>					
 					{% if gottip %}	
 						<font color = 'Ivory'>
-						Your bill is {{ gottip[0].bill_amount }} <br>
+						Your bill is ${{ gottip[0].bill_amount }} <br>
 						<ul>
 							<li>
-								{{ gottip[0].percent }} tip should be: {{ gottip[0].tip_amount }}
+								{{ gottip[0].percent }} tip should be: ${{ gottip[0].tip_amount }}
 							</li>
 							<li>
-								{{ gottip[1].percent }} tip should be: {{ gottip[1].tip_amount }}
+								{{ gottip[1].percent }} tip should be: ${{ gottip[1].tip_amount }}
 							</li>
 							<li>
-								{{ gottip[2].percent }} tip should be: {{ gottip[2].tip_amount }}
+								{{ gottip[2].percent }} tip should be: ${{ gottip[2].tip_amount }}
 							</li>
 						</ul>
 						</font>
