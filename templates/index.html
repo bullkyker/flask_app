@@ -13,7 +13,7 @@
 		<title>Robert Quinn's Python project</title>
 	</head>
 	<body background='http://www.geocities.ws/nhbludog/rextree.jpg'><center>		
-		<div bgcolor = 'lightsteelblue'>			
+		<div bgcolor = 'GoldenRod  '>			
 			<div class = "container">
 				<h1><b>Search all kinds of stuff<br>We'll find it and tree it for you</b></h1><br>
 				<p align=left><img src='http://www.geocities.ws/nhbludog/an_usa_flag_lg.gif'></p>
@@ -26,7 +26,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4">
-					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Weather</font></u></b></h3>
+					<font color = "GoldenRod  "><h3><b><u><font color="Navy">Weather</font></u></b></h3>
 					{% if weather %}
 						<h2>{{ weather }}!</h2>
 						<a href="{{ url_for('index') }}"> Look-up another </a>
@@ -44,7 +44,7 @@
 				</div>
 			
 				<div class="col-sm-4">
-					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Yelp Search</font></u></b></h3>
+					<font color = "GoldenRod  "><h3><b><u><font color="Navy">Yelp Search</font></u></b></h3>
 					{% if searchresult %}						
 						<font color='Ivory'>
 						<ol>
@@ -73,7 +73,7 @@
 					{% endif %}					
 				</div>
 				<div class="col-sm-4">
-					<font color = "LightSteelBlue"><h3><b><u><font color="Navy">Amazon Search</b></font></u></h3>
+					<font color = "GoldenRod  "><h3><b><u><font color="Navy">Amazon Search</b></font></u></h3>
 					{% if amazonresult %}						
 						<font color='Ivory'>
 						<ol>
@@ -100,14 +100,26 @@
 </div>
 <div class="row">				
 				<div class="col-sm-4">
-					<p aligh="center"><font color = "LightSteelBlue"><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>
+					<p aligh="center"><font color = "GoldenRod  "><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>
 					{% if gottip %}				
-						
+						<!--
 						{% for tip in gottip %}
 							 {{ tip.percent }} should be: {{ tip.tip_amount }} <br>							
 							
 						{% endfor %}
-						
+						-->
+						Your bill is {{ gottip[0].bill_amount }} <br>
+						<ul>
+							<li>
+								{{ gottip[0].percent }} tip should be: {{ gottip[0].tip_amount }}
+							</li>
+							<li>
+								{{ gottip[1].percent }} tip should be: {{ gottip[1].tip_amount }}
+							</li>
+							<li>
+								{{ gottip[2].percent }} tip should be: {{ gottip[2].tip_amount }}
+							</li>
+						</ul>
 						<a href="{{ url_for('index') }}"> Try a different amount </a>
 					{% else %} 
 						<h3>Please provide amount of the bill to get suggested tip amounts</h3><br><br>
