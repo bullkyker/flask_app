@@ -15,31 +15,31 @@ import math
 #Calulations
 def num(s):
     try:
-        return int(s)
-    except ValueError:
         return float(s)
-#Tips = []
+    except ValueError:
+        return 1.00
+Tips = []
 def suggest_tip(amount):
 	amount = num(amount)
 	fifteen = float(amount * 0.15) 
 	eighteen = float(amount * 0.18) 
 	twenty = float(amount * 0.2) 
-	# Tips.append({
-		    # "amount": str(amount), 
-		    # "tip_amount": str(fifteen),
-			# "percent": "fifteen percent"
-		# })
-	# Tips.append({
-		    # "amount": str(amount), 
-		    # "tip_amount": str(eighteen),
-			# "percent": "eighteen percent"
-		# })
-	# Tips.append({
-		    # "amount": str(amount), 
-		    # "tip_amount": str(twenty),
-			# "percent": "twenty percent"
-		# })
-	#return Tips
+	Tips.append({
+		    "amount": str(amount), 
+		     "tip_amount": str("%.2f" % round(fifteen,2)),
+			"percent": "fifteen percent"
+		})
+	Tips.append({
+		    "amount": str(amount), 
+		     "tip_amount": str("%.2f" % round(eighteen,2)),
+			"percent": "eighteen percent"
+		})
+	Tips.append({
+		    "amount": str(amount), 
+		     "tip_amount": str("%.2f" % round(twenty,2)),
+			"percent": "twenty percent"
+		})
+	return Tips
 #print(suggest_tip(12.50))
-	return("The suggested tips for $%.2f are: 15 percent $%.2f, 18 percent $%.2f, 20 percent $%.2f" % (amount, fifteen, eighteen, twenty))
+	#return("The suggested tips for $%.2f are: 15 percent $%.2f, 18 percent $%.2f, 20 percent $%.2f" % (amount, fifteen, eighteen, twenty))
 #print("The totals would be: \n\t 15 percent $%.2f, \n\t 18 percent $%.2f, \n\t 20 percent $%.2f" % (fifteen + amount, eighteen + amount, twenty + amount))

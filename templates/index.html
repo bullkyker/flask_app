@@ -103,7 +103,10 @@
 					<p aligh="center"><font color = "LightSteelBlue"><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>
 					{% if gottip %}				
 						
-						<h5>{{ gottip }}</h5>
+						{% for tip in gottip %}
+							 {{ tip.percent }} should be: {{ tip.tip_amount }} <br>							
+							
+						{% endfor %}
 						
 						<a href="{{ url_for('index') }}"> Try a different amount </a>
 					{% else %} 

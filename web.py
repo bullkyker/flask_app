@@ -46,7 +46,7 @@ def index():
 		sundae = icecream()
 		return render_template('index.html', icecream=sundae)
 	elif(request.values.get('amount'))!=None:
-		tip = request.values.get('amount')
+		tip = request.values.get('amount', 1.00)
 		tip_suggest = suggest_tip(tip)
 		return render_template('index.html', gottip=tip_suggest)
 	else:
