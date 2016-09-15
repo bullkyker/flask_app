@@ -29,17 +29,20 @@ def suggest_tip(amount):
 	Tips.append({
 		    "bill_amount": str(fl_amount), 
 		     "tip_amount": str("%.2f" % round(fifteen,2)),
-			"percent": " for fifteen percent"
+			"percent": " for fifteen percent",
+			"total": str("%.2f" %(round(fifteen,2) + fl_amount))
 		})
 	Tips.append({
 		    "bill_amount": str(fl_amount), 
 		     "tip_amount": str("%.2f" % round(eighteen,2)),
-			"percent": " for eighteen percent"
+			"percent": " for eighteen percent",
+			"total": str("%.2f" %(round(eighteen,2) + fl_amount))
 		})
 	Tips.append({
 		    "bill_amount": str(fl_amount), 
 		     "tip_amount": str("%.2f" % round(twenty,2)),
-			"percent": " for twenty percent"
+			"percent": " for twenty percent",
+			"total": str("%.2f" %(round(twenty,2) + fl_amount))
 		})
 	return Tips
 # mytip = suggest_tip(42.50)
