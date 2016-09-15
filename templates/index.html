@@ -149,7 +149,11 @@
 							<h3>{{ icecream}}</h3>
 						</font>
 						<br><center>
-						<a href="{{ url_for('index') }}"> Make another sundae </a>
+						<a href="{{ url_for('index') }}">  </a>
+						<form>
+						<input type="hidden" name="icecream" value="icecream"><br><br>						
+						<center><input type="submit" value="Make another sundae" class="btn btn-primary"></center>
+					</form>
 						</center>
 					{% else %} 
 						<h3>I can randomly design a sundae</h3><br><br>
