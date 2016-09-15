@@ -6,7 +6,7 @@
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" 
 		integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">	
-		<style>a:link {text-decoration:none; color:Yellow; size:18px; font-weight:bold}
+		<style>a:link {text-decoration:none; color:Navy; size:18px; font-weight:bold}
        a:visited {text-decoration:none; color:Chartreuse; size:18px; font-weight:bold}
        a:hover {text-decoration:underline; color:Salmon; font-weight:bold }</style>
 
@@ -100,14 +100,9 @@
 </div>
 <div class="row">				
 				<div class="col-sm-4">
-					<p aligh="center"><font color = "GoldenRod  "><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>
-					{% if gottip %}				
-						<!--
-						{% for tip in gottip %}
-							 {{ tip.percent }} should be: {{ tip.tip_amount }} <br>							
-							
-						{% endfor %}
-						-->
+					<p aligh="center"><font color = "GoldenRod  "><u><font color="Navy"><h3><b>Tip calculator</b></h3></font></u></p>					
+					{% if gottip %}	
+						<font color = 'Ivory'>
 						Your bill is {{ gottip[0].bill_amount }} <br>
 						<ul>
 							<li>
@@ -120,6 +115,7 @@
 								{{ gottip[2].percent }} tip should be: {{ gottip[2].tip_amount }}
 							</li>
 						</ul>
+						</font>
 						<a href="{{ url_for('index') }}"> Try a different amount </a>
 					{% else %} 
 						<h3>Please provide amount of the bill to get suggested tip amounts</h3><br><br>
@@ -127,9 +123,8 @@
 							<!-- Way cool HTML5 input -->
 							<input type="number" step="0.01" name="amount" placeholder="Enter the bill price here (numbers only)" class="form-control">
 							<input type="submit" value="What to tip" class="btn btn-primary">
-						</form>
-					{% endif %}
-					</font>
+						</form>					
+					{% endif %}					
 				</div>
 				<div class="col-sm-4">
 					<p aligh="center"><u><font color="Navy"><h3><b>Get Stocks</b></h3></font></u></p>

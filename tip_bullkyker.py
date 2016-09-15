@@ -21,23 +21,23 @@ def num(s):
 Tips = []
 def suggest_tip(amount):
 	#amount = num(amount)
-	#amount = 85.5
-	amount = float(amount)
-	fifteen = float(amount * 0.15) 
-	eighteen = float(amount * 0.18) 
-	twenty = float(amount * 0.2) 
+	#fl_amount = 85.5
+	fl_amount = float(amount)
+	fifteen = float(fl_amount * 0.15) 
+	eighteen = float(fl_amount * 0.18) 
+	twenty = float(fl_amount * 0.2) 
 	Tips.append({
-		    "bill_amount": str(amount), 
+		    "bill_amount": str(fl_amount), 
 		     "tip_amount": str("%.2f" % round(fifteen,2)),
 			"percent": " for fifteen percent"
 		})
 	Tips.append({
-		    "bill_amount": str(amount), 
+		    "bill_amount": str(fl_amount), 
 		     "tip_amount": str("%.2f" % round(eighteen,2)),
 			"percent": " for eighteen percent"
 		})
 	Tips.append({
-		    "bill_amount": str(amount), 
+		    "bill_amount": str(fl_amount), 
 		     "tip_amount": str("%.2f" % round(twenty,2)),
 			"percent": " for twenty percent"
 		})

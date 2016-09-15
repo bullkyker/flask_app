@@ -13,6 +13,7 @@
 #https://www.crummy.com/software/BeautifulSoup/
 import sys
 import os
+import tip_bullkyker
 #from pathlib import Path # if you haven't already done so
 #root = str(Path(__file__).resolve().parents[1])
 # Or
@@ -24,6 +25,7 @@ from flask import Flask, render_template, request
 from yelp_api import yelp_search
 from ice_cream import icecream
 from tip_bullkyker import suggest_tip
+from imp import reload
 app = None 
 app = Flask(__name__)
 @app.route("/")
@@ -46,8 +48,9 @@ def index():
 		sundae = icecream()
 		return render_template('index.html', icecream=sundae)
 	elif(request.values.get('amount'))!=None:
-		tip = request.values.get('amount', 1.00)
+		tip = request.values.get('amount')
 		tip_suggest = suggest_tip(tip)
+		reload(tip_bullkyker)
 		return render_template('index.html', gottip=tip_suggest)
 	else:
 		return render_template('index.html')
