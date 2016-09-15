@@ -26,6 +26,7 @@ from yelp_api import yelp_search
 from ice_cream import icecream
 from tip_bullkyker import suggest_tip
 from imp import reload
+from amazon_scraper import get_amazon
 app = None 
 app = Flask(__name__)
 @app.route("/")
@@ -52,6 +53,10 @@ def index():
 		tip_suggest = suggest_tip(tip)
 		reload(tip_bullkyker)
 		return render_template('index.html', gottip=tip_suggest)
+	elif(request.values.get('amazontopic'))!=None:
+		amazon_search = request.values.get('amazontopic')
+		amazon_result = get_amazon(amazon_search)
+		return render_template('index.html', yoursearch=amazon_result)
 	else:
 		return render_template('index.html')
 

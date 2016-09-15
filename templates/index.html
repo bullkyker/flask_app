@@ -74,12 +74,13 @@
 				</div>
 				<div class="col-sm-4">
 					<font color = "GoldenRod  "><h3><b><u><font color="Navy">Amazon Search</b></font></u></h3>
-					{% if amazonresult %}						
+					{% if yoursearch %}						
 						<font color='Ivory'>
 						<ol>
-						{% for business in searchresult %}
+						{% for item in yoursearch %}
 							<li>Name: 
-							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.phone }}
+							<a href = {{ item.link }} target= _window>{{ item.name }}</a>,<br>{{ item.price }}<br>
+							<img src = {{ item.image }} />
 							</li>
 							<hr color='green'>
 						{% endfor %}
