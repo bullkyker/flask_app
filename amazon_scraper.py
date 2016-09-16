@@ -35,4 +35,10 @@ def get_amazon(mysearch):
 		counter += 1
 		if counter > 3:
 			break # return only 3
+<<<<<<< HEAD
 return amazon
+=======
+	return amazon
+	
+#my_amazon= get_amazon("wild rice")
+>>>>>>> 201d71b80d2ce126324af8d93edddd7ca48a128d

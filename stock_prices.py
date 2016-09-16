@@ -1,4 +1,5 @@
 from pandas.io.data import DataReader
+#from pandas_datareader import data, wb
 from googlefinance import getQuotes
 import json
 from datetime import datetime
@@ -20,7 +21,7 @@ stocks = ["GIB","AAPL", "GOOG", "TSLA", "AEM", "AFL", "ALL", "F", "CAT", "C", "C
 		# print("The price of {} is: ${}".format(stock['StockSymbol'],stock['LastTradePrice']))
 		
 # print_stock_prices(stocks)
-ibm = DataReader('GIB',  'yahoo', datetime(2016,7,1), datetime(2016,9,1))
+ibm = DataReader('GIB',  'yahoo', datetime(2016,6,1), datetime(2016,9,1))
 print(ibm)
 # def get_quote(symbol):
     # base_url = 'http://finance.google.com/finance?q='
