@@ -3,6 +3,7 @@ click==6.6
 cookies==2.2.1
 Django==1.10
 Flask==0.11.1
+folium==0.2.1
 geopy==1.11.0
 google-api-python-client==1.5.2
 googlefinance==0.7
