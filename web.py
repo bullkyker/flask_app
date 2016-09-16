@@ -13,6 +13,8 @@
 #https://www.crummy.com/software/BeautifulSoup/
 import sys
 import os
+import tip_bullkyker
+import amazon_scraper
 #from pathlib import Path # if you haven't already done so
 #root = str(Path(__file__).resolve().parents[1])
 # Or
@@ -24,6 +26,8 @@ from flask import Flask, render_template, request
 from yelp_api import yelp_search
 from ice_cream import icecream
 from tip_bullkyker import suggest_tip
+from imp import reload
+from amazon_scraper import get_amazon
 app = None 
 app = Flask(__name__)
 @app.route("/")
@@ -48,7 +52,12 @@ def index():
 	elif(request.values.get('amount'))!=None:
 		tip = request.values.get('amount')
 		tip_suggest = suggest_tip(tip)
+		reload(tip_bullkyker)
 		return render_template('index.html', gottip=tip_suggest)
+	elif(request.values.get('amazontopic'))!=None:
+		amazon_search = request.values.get('amazontopic')
+		amazon_result = get_amazon(amazon_search)
+		return render_template('index.html', yoursearch=amazon_result)
 	else:
 		return render_template('index.html')
 
@@ -58,4 +67,4 @@ def about():
 
 if __name__  ==  "__main__":
 	port = int(os.environ.get("PORT", 5000))
-	app.run(debug=True, host='0.0.0.0', port=port)	
+	app.run(debug=True, host='0.0.0.0', port=port)
