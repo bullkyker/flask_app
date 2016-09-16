@@ -35,7 +35,7 @@
 						<h3>Enter a location and I'll retrieve the weather</h3><br> <!-- Trying to line shit up -->
 						<form action="/" class = "form-inline">
 							<div class="form-group">
-								<input type = "text" name="weather" placeholder="Enter your location here" class="form-control"><br><br>
+								<input type = "text" name="weather" placeholder="Enter your location here" class="form-control" required><br><br>
 								<input type = "submit" value="Get Weather" class="btn btn-primary">
 							</div>
 						</form>
@@ -65,8 +65,8 @@
 						<h3>Enter a search term and city, and I'll yelp search it</h3><br>
 						<form>
 							<div class="form-group">
-								<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control">
-								<input type = "text" name="city" placeholder="Enter your search location here" class="form-control">
+								<input type = "text" name="topic" placeholder="Enter your search topic here" class="form-control" required>
+								<input type = "text" name="city" placeholder="Enter your search location here" class="form-control" required>
 								<input type="submit" value="Yelp Search" class="btn btn-primary">
 							</div>
 						</form>
@@ -91,7 +91,7 @@
 					{% else %} 
 						<h3>Lets try to find something on Amazon</h3><br>
 						<form>
-							<input type = "text" name="amazontopic" placeholder="Enter your search topic here" class="form-control">
+							<input type = "text" name="amazontopic" placeholder="Enter your search topic here" class="form-control" required>
 							<br>
 							<input type="submit" value="Amazon Search" class="btn btn-primary">
 						</form>
