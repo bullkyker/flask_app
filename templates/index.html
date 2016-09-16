@@ -9,7 +9,20 @@
 		<style>a:link {text-decoration:none; color:Navy; size:18px; font-weight:bold}
        a:visited {text-decoration:none; color:Chartreuse; size:18px; font-weight:bold}
        a:hover {text-decoration:underline; color:Salmon; font-weight:bold }</style>
-
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+  <script>
+  $(document).ready(function() {
+    $(".datepicker").datepicker();
+  });
+  </script>
 		<title>Robert Quinn's Python project</title>
 	</head>
 	<body background='http://www.geocities.ws/nhbludog/rextree.jpg'><center>		
@@ -148,8 +161,10 @@
 						<!--</h3>-->
 						<a href="{{ url_for('index') }}"> Look-up another </a>
 					{% else %} 
-						<h3>Enter a stock Code and we'll look it up</h3><br><br><br>
+						<h4>Enter a stock Code and we'll look it up</h4><br><br><br>
 					<form>
+						From  : <input class="datepicker" name="startdate"/><br>	
+						To:&emsp;&emsp;<input id="datepicker" name="enddate"/>
 						<input type = "text" name="stock" placeholder="Enter stock here" class="form-control">						
 						<input type="submit" value="Stock Quotes" class="btn btn-primary">
 					</form>

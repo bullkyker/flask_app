@@ -5,7 +5,7 @@ import requests
 
 
 def get_amazon(mysearch):
-	url = "https://www.amazon.com/s/?field-keywords="
+	url = "http://www.amazon.com/s/?field-keywords="
 	url += mysearch.replace(' ', '+')
 	headers = {'User-Agent': 'Mozilla/5.0'}
 	response = requests.get(url, headers = headers)
