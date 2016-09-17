@@ -57,6 +57,7 @@ def index():
 	elif(request.values.get('amazontopic'))!=None:
 		amazon_search = request.values.get('amazontopic')
 		amazon_result = get_amazon(amazon_search)
+		reload(amazon_scraper)
 		return render_template('index.html', yoursearch=amazon_result)
 	else:
 		return render_template('index.html')
