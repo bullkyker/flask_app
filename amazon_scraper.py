@@ -37,3 +37,4 @@ def get_amazon(mysearch):
 			break # return only 3
 	reload(requests)
 	return amazon
+#what the hey
