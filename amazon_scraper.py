@@ -2,7 +2,7 @@
 #https://www.crummy.com/software/BeautifulSoup/
 from bs4 import BeautifulSoup
 import requests
-
+from imp import reload
 
 def get_amazon(mysearch):
 	url = "https://www.amazon.com/s/?field-keywords="
@@ -35,4 +35,5 @@ def get_amazon(mysearch):
 		counter += 1
 		if counter > 3:
 			break # return only 3
+	reload(requests)
 	return amazon
