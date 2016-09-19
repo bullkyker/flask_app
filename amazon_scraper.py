@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 import requests
 from imp import reload
-from user_agents import parse
+#from user_agents import parse
 
 
 def get_amazon(mysearch):
