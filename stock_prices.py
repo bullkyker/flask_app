@@ -8,28 +8,18 @@ import time
 import urllib.request
 import urllib
 import re
-	
-stocks = ["GIB","AAPL", "GOOG", "TSLA", "AEM", "AFL", "ALL", "F", "CAT", "C", "CAB", "DAL"]
+import argparse
+from dateutil.parser import parse #http://stackoverflow.com/questions/2265357/parse-date-string-and-change-format
 
-#print(json.dumps(getQuotes(stocks), indent = 3))
-
-#print(stock_data[0])
-
-# def print_stock_prices(stocks):
-	# stock_data = getQuotes(stocks)
-	# for stock in stock_data:
-		# print("The price of {} is: ${}".format(stock['StockSymbol'],stock['LastTradePrice']))
-		
-# print_stock_prices(stocks)
-ibm = DataReader('GIB',  'yahoo', datetime(2016,6,1), datetime(2016,9,1))
-print(ibm)
-# def get_quote(symbol):
-    # base_url = 'http://finance.google.com/finance?q='
-    # content = urllib.request.urlopen(base_url + symbol).read().decode('utf-8')
-    # m = re.search('id="ref_694653_l".*?>(.*?)<', content)
-    # if not m:
-        # quote = m.group(1)
-    # else:
-        # quote = 'no quote available for: ' + symbol
-    # return quote
-# print(get_quote('aapl'))
+def get_stocks(start, stop, symbol):
+	start1 = start.replace('%2F','-')
+	start2 = parse(start1)
+	start2 = start2.strftime('%Y-%m-%d')
+	stop1 = stop.replace('%2F','-')
+	stop2 = parse(stop1)
+	stop2 = stop2.strftime('%Y-%m-%d')
+	ibm = DataReader(symbol,  'google', start2, stop2)	
+	return(str(ibm).split())
+#stocks = get_stocks('09%2F07%2F2016', '09%2F30%2F2016', 'GOOG')
+#stocks = str(stocks)
+#print(stocks)

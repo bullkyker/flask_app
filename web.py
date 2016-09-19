@@ -14,7 +14,6 @@
 import sys
 import os
 import tip_bullkyker
-import amazon_scraper
 #from pathlib import Path # if you haven't already done so
 #root = str(Path(__file__).resolve().parents[1])
 # Or
@@ -28,6 +27,8 @@ from ice_cream import icecream
 from tip_bullkyker import suggest_tip
 from imp import reload
 from amazon_scraper import get_amazon
+from exchange_symbols import get_symbols
+from stock_prices import get_stocks
 app = None 
 app = Flask(__name__)
 @app.route("/")
@@ -37,29 +38,36 @@ def index():
 	term = None
 	city = None
 	businesses = None
+	symbols = get_symbols()
 	if(request.values.get('weather'))!=None:
 		location = request.values.get('weather')
 		local_weather=get_location(location)
-		return render_template('index.html', weather=local_weather)
+		return render_template('index.html', weather=local_weather, exsymbols=symbols)
 	elif(request.values.get('topic'))!=None:
 		term = request.values.get('topic')
 		city = request.values.get('city')
 		businesses = yelp_search(term, city)
-		return render_template('index.html', searchresult=businesses)
+		return render_template('index.html', searchresult=businesses, exsymbols=symbols)
 	elif(request.values.get('icecream'))!=None:
 		sundae = icecream()
-		return render_template('index.html', icecream=sundae)
+		return render_template('index.html', icecream=sundae, exsymbols=symbols)
 	elif(request.values.get('amount'))!=None:
 		tip = request.values.get('amount')
 		tip_suggest = suggest_tip(tip)
 		reload(tip_bullkyker)
-		return render_template('index.html', gottip=tip_suggest)
+		return render_template('index.html', gottip=tip_suggest, exsymbols=symbols)
 	elif(request.values.get('amazontopic'))!=None:
 		amazon_search = request.values.get('amazontopic')
 		amazon_result = get_amazon(amazon_search)
-		return render_template('index.html', yoursearch=amazon_result)
-	else:
-		return render_template('index.html')
+		return render_template('index.html', yoursearch=amazon_result, exsymbols=symbols)	
+	elif(request.values.get('stocksymbol'))!=None:	
+		start = request.values.get('startdate')
+		stop = request.values.get('enddate')
+		symbol = request.values.get('stocksymbol')
+		stock = get_stocks(start, stop, symbol)		
+		return render_template('index.html', yourstocks=stock)	
+	else:		
+		return render_template('index.html', exsymbols=symbols)
 
 @app.route("/about")
 def about():

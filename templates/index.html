@@ -36,12 +36,12 @@
 			</div>
 		</div>	
 		</center><hr color='magenta'>
-		<div class="container">
+		<div class="container">			
 			<div class="row">
 				<div class="col-sm-4">
 					<font color = "GoldenRod  "><h3><b><u><font color="Navy">Weather</font></u></b></h3>
 					{% if weather %}
-						<h2>{{ weather }}!</h2>
+						<h2><font color = "Ivory">{{ weather }}!</font></h2>
 						<a href="{{ url_for('index') }}"> Look-up another </a>
 					
 					{% else %} 
@@ -145,44 +145,47 @@
 				</div>
 				<div class="col-sm-4">
 					<p aligh="center"><u><font color="Navy"><h3><b>Get Stocks</b></h3></font></u></p>
-					{% if stocks %}
-						<!--<h3>-->
-						<font color='Ivory'>
-						<ol>
-						{% for business in searchresult %}
-							<li>{{ business.image_url }} <br>>Name: 
-							{{ business.name }},<br>Rating: {{ business.rating }}<br>Phone: {{ business.image_url }}
-							
-							</li>
-							<hr color='green'>
-						{% endfor %}
-						</ol>
-						</font>
-						<!--</h3>-->
+					{% if exsymbols %}
+						<script language="javascript" type="text/javascript">
+							document.getElementById("symbols").innerHTML = "";							
+						</script>
+						<h4>Enter a stock Code and we'll look it up</h4><br>
+						<form>
+							From  : <input class="datepicker" name="startdate" required/><br>	
+							To:&emsp;&emsp;<input id="datepicker" name="enddate" required/><br>
+							Select a symbol:
+							<select name="stocksymbol">
+								{% for symbol in exsymbols %}
+									<option value ={{ symbol }} >{{ symbol }} </option>
+								{% endfor %}
+							</select><br>
+							<input type="submit" value="Stock Quotes" class="btn btn-primary">
+						</form>
+					{% endif %}	
+					{% if yourstocks %}
+						
+						<p style="font-size:12px; color:Ivory">						
+							{{ yourstocks }} 
+						</p>
+						<br>
 						<a href="{{ url_for('index') }}"> Look-up another </a>
-					{% else %} 
-						<h4>Enter a stock Code and we'll look it up</h4><br><br><br>
-					<form>
-						From  : <input class="datepicker" name="startdate"/><br>	
-						To:&emsp;&emsp;<input id="datepicker" name="enddate"/>
-						<input type = "text" name="stock" placeholder="Enter stock here" class="form-control">						
-						<input type="submit" value="Stock Quotes" class="btn btn-primary">
-					</form>
 					{% endif %}
 				</div>
+						
+						<!-- <a href="{{ url_for('index') }}"> Look-up another </a> -->
 				<div class="col-sm-4">
 					<p aligh="center"><u><font color="Navy"><h3><b>Ice Cream</b></h3></font></u></p>
 					{% if icecream %}
 						
 						<font color='Ivory'>
-							<h3>{{ icecream}}</h3>
+							<h3>{{ icecream }}</h3>
 						</font>
 						<br><center>
 						<a href="{{ url_for('index') }}">  </a>
 						<form>
-						<input type="hidden" name="icecream" value="icecream"><br><br>						
-						<center><input type="submit" value="Make another sundae" class="btn btn-primary"></center>
-					</form>
+							<input type="hidden" name="icecream" value="icecream"><br><br>						
+							<center><input type="submit" value="Make another sundae" class="btn btn-primary"></center>
+						</form>
 						</center>
 					{% else %} 
 						<h3>I can randomly design a sundae</h3><br><br>
