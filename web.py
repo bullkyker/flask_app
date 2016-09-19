@@ -14,6 +14,7 @@
 import sys
 import os
 import tip_bullkyker
+import amazon_scraper
 #from pathlib import Path # if you haven't already done so
 #root = str(Path(__file__).resolve().parents[1])
 # Or
@@ -59,6 +60,7 @@ def index():
 	elif(request.values.get('amazontopic'))!=None:
 		amazon_search = request.values.get('amazontopic')
 		amazon_result = get_amazon(amazon_search)
+		reload(amazon_scraper)
 		return render_template('index.html', yoursearch=amazon_result, exsymbols=symbols)	
 	elif(request.values.get('stocksymbol'))!=None:	
 		start = request.values.get('startdate')
@@ -75,4 +77,4 @@ def about():
 
 if __name__  ==  "__main__":
 	port = int(os.environ.get("PORT", 5000))
-	app.run(debug=True, host='0.0.0.0', port=port)	
+	app.run(debug=True, host='0.0.0.0', port=port)

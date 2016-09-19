@@ -2,12 +2,12 @@
 #https://www.crummy.com/software/BeautifulSoup/
 from bs4 import BeautifulSoup
 import requests
-
+from imp import reload
 
 def get_amazon(mysearch):
 	url = "https://www.amazon.com/s/?field-keywords="
 	url += mysearch.replace(' ', '+')
-	headers = {'User-Agent': 'Mozilla/5.0'}
+	headers = {'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)'}
 	response = requests.get(url, headers = headers)
 	soup = BeautifulSoup(response.text, "html.parser")	
 	items = soup.find_all('li', 's-result-item')
@@ -35,6 +35,6 @@ def get_amazon(mysearch):
 		counter += 1
 		if counter > 3:
 			break # return only 3
+	reload(requests)
 	return amazon
-	
-#my_amazon= get_amazon("wild rice")
+#what the hey

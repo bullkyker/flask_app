@@ -2,6 +2,7 @@
 
 
 <!-- http://v4-alpha.getbootstrap.com/ -->
+
 <html>
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" 
@@ -41,7 +42,7 @@
 				<div class="col-sm-4">
 					<font color = "GoldenRod  "><h3><b><u><font color="Navy">Weather</font></u></b></h3>
 					{% if weather %}
-						<h2><font color = "Ivory">{{ weather }}!</font></h2>
+						<h3><font color = "Ivory">{{ weather }}!</font></h3><br>
 						<a href="{{ url_for('index') }}"> Look-up another </a>
 					
 					{% else %} 
@@ -201,7 +202,12 @@
 		<div class = "jumbotron">
 			<center>
 			<div class = "container">
-				<font color='Salmon'><a class='Fred' href="{{ url_for('about') }}"> About </a></font>
+				<font color='Salmon'><a class='Fred' href="{{ url_for('about') }}"> About </a></font><br>Page Hits: ..
+			
+				<a href="http://www.reliablecounter.com" target="_blank">
+				<img src="http://www.reliablecounter.com/count.php?page=https://bullkyker-project.herokuapp.com/&digit=style/plain/17/&reloads=0" 
+				alt="" title="" border="0"></a>
+				<br /><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">3d Printer Files</a>
 			</div>
 			</center>
 		</div>

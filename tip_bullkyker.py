@@ -49,3 +49,4 @@ def suggest_tip(amount):
 # print(mytip[0])
 	#return("The suggested tips for $%.2f are: 15 percent $%.2f, 18 percent $%.2f, 20 percent $%.2f" % (amount, fifteen, eighteen, twenty))
 #print("The totals would be: \n\t 15 percent $%.2f, \n\t 18 percent $%.2f, \n\t 20 percent $%.2f" % (fifteen + amount, eighteen + amount, twenty + amount))
+#print("The totals would be: \n\t 15 percent $%.2f, \n\t 18 percent $%.2f, \n\t 20 percent $%.2f" % (fifteen + amount, eighteen + amount, twenty + amount))
