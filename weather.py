@@ -36,8 +36,9 @@ def get_location(my_location):
 		longitude = location.longitude
 		address = location.address
 	except AttributeError:
-		print("You need to enter a valid address")		
-		return
+		#print("You need to enter a valid address")		
+		#return
+		pass
 	#print(get_weather(latitude, longitude, address))
 	current_weather = get_weather(latitude, longitude, address)
 	return current_weather
