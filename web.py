@@ -30,7 +30,6 @@ from imp import reload
 from amazon_scraper import get_amazon
 from exchange_symbols import get_symbols
 from stock_prices import get_stocks
-app = None 
 app = Flask(__name__)
 @app.route("/")
 def index():	

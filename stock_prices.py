@@ -7,8 +7,6 @@ import pandas
 import time
 import urllib.request
 import urllib
-import re
-import argparse
 from dateutil.parser import parse #http://stackoverflow.com/questions/2265357/parse-date-string-and-change-format
 
 def get_stocks(start, stop, symbol):
