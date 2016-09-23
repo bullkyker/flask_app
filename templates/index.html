@@ -110,7 +110,7 @@
 							<input type="submit" value="Amazon Search" class="btn btn-primary">
 						</form>
 					{% endif %}
-				</font>
+					</font>
 				</div>
 </div>
 <div class="row">				
@@ -164,10 +164,25 @@
 						</form>
 					{% endif %}	
 					{% if yourstocks %}
+						<table border = "6" cellpadding = "3" cellspacing = "2">
+							<tr>
+								<td colspan = "6" align= "center" bgcolor="Gold"><font color = "Red"><h4> Stock Quotes for: {{ symbol }} </h4></font></td>
+							</tr>
+							<tr>
+								<th><font color = 'Ivory'>Date</font></th><th><font color = 'Ivory'>Open</font></th>
+								<th><font color = 'Ivory'>High</font></th><th><font color = 'Ivory'>Low</font></th>
+								<th><font color = 'Ivory'>Close</font></th><th><font color = 'Ivory'>Volume</font></th>
+							</tr>
+						{% for item in yourstocks %}
+							<tr>
+							{% for stock in item %}								
+								<td bgcolor="Navy"><font color = 'Ivory' size = '2'> {{ stock }} </font></td>
+							{% endfor %}
+							</tr>
+						{% endfor %}
 						
-						<p style="font-size:14px; color:Ivory">						
-							{{ yourstocks }} 
-						</p>
+						</table>
+						
 						<br>
 						<a href="{{ url_for('index') }}"> Look-up another </a>
 					{% endif %}

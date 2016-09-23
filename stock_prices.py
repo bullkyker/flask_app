@@ -23,10 +23,11 @@ def get_stocks(start, stop, symbol):
 	my_length = int(len(ibm))	
 	for X in range(0, my_length, 6):
 		row = []
-		for item in ibm[X:6 + X ]:		
-			 #print(item)
-			 row.append(item)
-		layout.append(row)
+		for item in ibm[X:6 + X ]:
+			if item != "...":
+				row.append(item)
+		if len(row) == 6:
+			layout.append(row)
 			
 	return layout	
 

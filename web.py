@@ -66,7 +66,7 @@ def index():
 		stop = request.values.get('enddate')
 		symbol = request.values.get('stocksymbol')
 		stock = get_stocks(start, stop, symbol)		
-		return render_template('index.html', yourstocks=stock)	
+		return render_template('index.html', yourstocks=stock, symbol=symbol)	
 	else:		
 		return render_template('index.html', exsymbols=symbols)
 
