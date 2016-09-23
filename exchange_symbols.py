@@ -3,8 +3,7 @@ import requests
 
 
 def get_symbols():
-	url = "https://www.google.com/finance?start=0&num=3000&q=%5B(exchange%20%3D%3D%20%22NASDAQ%22)%20%26%20(last_price%20%3E%200.1)%20%26%20(last_price%20%3C%201500)%5D&restype=company&noIL=1"
-	print("Looping")
+	url = "https://www.google.com/finance?start=0&num=3000&q=%5B(exchange%20%3D%3D%20%22NASDAQ%22)%20%26%20(last_price%20%3E%200.1)%20%26%20(last_price%20%3C%201500)%5D&restype=company&noIL=1"	
 	headers = {'User-Agent': 'Mozilla/5.0'}
 	response = requests.get(url, headers = headers)
 	soup = BeautifulSoup(response.text, "html.parser")	

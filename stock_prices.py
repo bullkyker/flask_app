@@ -17,7 +17,18 @@ def get_stocks(start, stop, symbol):
 	stop2 = parse(stop1)
 	stop2 = stop2.strftime('%Y-%m-%d')
 	ibm = DataReader(symbol,  'google', start2, stop2)	
-	return(str(ibm).split())
-#stocks = get_stocks('09%2F07%2F2016', '09%2F30%2F2016', 'GOOG')
-#stocks = str(stocks)
-#print(stocks)
+	ibm = str(ibm).split()
+	#print(ibm)
+	layout = []
+	my_length = int(len(ibm))	
+	for X in range(0, my_length, 6):
+		row = []
+		for item in ibm[X:6 + X ]:		
+			 #print(item)
+			 row.append(item)
+		layout.append(row)
+			
+	return layout	
+
+# stocks = get_stocks('09%2F07%2F2016', '09%2F30%2F2016', 'GOOG')
+# print(stocks)
