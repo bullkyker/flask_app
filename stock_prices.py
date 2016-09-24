@@ -26,7 +26,7 @@ def get_stocks(start, stop, symbol):
 		for item in ibm[X:6 + X ]:
 			if item != "...":
 				row.append(item)
-		if len(row) == 6:
+		if len(row) == 6 and row[0] != 'Open':
 			layout.append(row)
 			
 	return layout	
