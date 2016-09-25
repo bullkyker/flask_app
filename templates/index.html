@@ -187,6 +187,8 @@
 									<td bgcolor="Yellow"<b><font color = 'Green' size = '2'></b> {{ stock }} </font></td>								
 								{% elif stock == volume %}
 									<td bgcolor="Ivory"<b><font color = 'Red' size = '2'></b> {{ stock }} </font></td>
+								{% elif stock == 'Averages' %}
+									<td bgcolor="Green"<b><font color = 'Ivory' size = '2'></b> {{ stock }} </font></td>
 								{% else %}
 									<td bgcolor="Navy"><font color = 'Ivory' size = '2'> {{ stock }} </font></td>
 								{% endif %}

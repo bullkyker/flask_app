@@ -7,6 +7,7 @@ import pandas
 import time
 import urllib.request
 import urllib
+import math
 
 from dateutil.parser import parse #http://stackoverflow.com/questions/2265357/parse-date-string-and-change-format
 
@@ -26,6 +27,14 @@ def get_min(good, col):
 		if float(open) <= float(min):
 			min = open
 	return min
+def get_average(good, col):	
+	count = 0
+	avg = 0
+	for row in good:
+		my_avg = row[col]
+		avg = avg + float(my_avg)
+		count += 1	
+	return round((avg/count),2)
 def is_number(s):
     try:
         float(s)
@@ -52,6 +61,19 @@ def get_stocks(start, stop, symbol):
 				row.append(item)
 		if len(row) == 6 and row[0] != 'Open':
 			layout.append(row)	
+	averages =[]
+	averages.append("Averages")
+	avg_open = get_average(layout, 1)
+	avg_high = get_average(layout, 2)
+	avg_low = get_average(layout, 3)
+	avg_close = get_average(layout, 4)
+	avg_vol = get_average(layout, 5)
+	averages.append(avg_open)
+	averages.append(avg_high)
+	averages.append(avg_low)
+	averages.append(avg_close)
+	averages.append(avg_vol)
+	layout.append(averages)
 	return layout
 	
 	
