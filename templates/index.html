@@ -177,8 +177,21 @@
 							</tr>
 						{% for item in yourstocks %}
 							<tr>
-							{% for stock in item %}								
-								<td bgcolor="Navy"><font color = 'Ivory' size = '2'> {{ stock }} </font></td>
+							{% for stock in item %}
+								{% if stock == open %}
+									<td bgcolor="Ivory"><b><font color = 'Navy' size = '2'></b> {{ stock }} </font></td>
+								{% elif stock == high %}
+									<td bgcolor="LightSteelBlue"<b><font color = 'Red' size = '2'></b> {{ stock }} </font></td>
+								{% elif stock == low %}
+									<td bgcolor="LightSteelBlue"<b><font color = 'Green' size = '2'></b> {{ stock }} </font></td>
+								{% elif stock == close %}
+									<td bgcolor="Yellow"<b><font color = 'Green' size = '2'></b> {{ stock }} </font></td>								
+								{% elif stock == volume %}
+									<td bgcolor="Ivory"<b><font color = 'Red' size = '2'></b> {{ stock }} </font></td>
+								{% else %}
+									<td bgcolor="Navy"><font color = 'Ivory' size = '2'> {{ stock }} </font></td>
+								{% endif %}
+								
 							{% endfor %}
 							</tr>
 						{% endfor %}

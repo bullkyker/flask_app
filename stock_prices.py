@@ -7,8 +7,32 @@ import pandas
 import time
 import urllib.request
 import urllib
+
 from dateutil.parser import parse #http://stackoverflow.com/questions/2265357/parse-date-string-and-change-format
 
+def get_max(good, col):	
+	max = 0
+	for row in good:
+		open = row[col]
+		#if is_number(open):
+		if float(open) >= float(max):
+			max = open
+	return max
+def get_min(good, col):	
+	min = 10000000
+	for row in good:
+		open = row[col]
+		#if is_number(open):
+		if float(open) <= float(min):
+			min = open
+	return min
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+	
 def get_stocks(start, stop, symbol):
 	start1 = start.replace('%2F','-')
 	start2 = parse(start1)
@@ -22,14 +46,14 @@ def get_stocks(start, stop, symbol):
 	layout = []
 	my_length = int(len(ibm))	
 	for X in range(0, my_length, 6):
-		row = []
-		for item in ibm[X:6 + X ]:
-			if item != "...":
+		row = []		
+		for item in ibm[X:6 + X ]:			
+			if item != '...':
 				row.append(item)
 		if len(row) == 6 and row[0] != 'Open':
-			layout.append(row)
-			
-	return layout	
-
+			layout.append(row)	
+	return layout
+	
+	
 # stocks = get_stocks('09%2F07%2F2016', '09%2F30%2F2016', 'GOOG')
 # print(stocks)

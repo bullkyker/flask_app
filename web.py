@@ -29,7 +29,7 @@ from tip_bullkyker import suggest_tip
 from imp import reload
 from amazon_scraper import get_amazon
 from exchange_symbols import get_symbols
-from stock_prices import get_stocks
+from stock_prices import get_stocks, get_max, get_min
 app = Flask(__name__)
 @app.route("/")
 def index():	
@@ -65,8 +65,13 @@ def index():
 		start = request.values.get('startdate')
 		stop = request.values.get('enddate')
 		symbol = request.values.get('stocksymbol')
-		stock = get_stocks(start, stop, symbol)		
-		return render_template('index.html', yourstocks=stock, symbol=symbol)	
+		stock = get_stocks(start, stop, symbol)
+		open = get_max(stock, 1)
+		high = get_max(stock, 2)
+		low = get_min(stock, 3)
+		close = get_max(stock, 4)		
+		volume = get_max(stock, 5)
+		return render_template('index.html', yourstocks=stock, symbol=symbol, open=open, high=high, low=low, close=close, volume=volume)	
 	else:		
 		return render_template('index.html', exsymbols=symbols)
 
@@ -76,4 +81,4 @@ def about():
 
 if __name__  ==  "__main__":
 	port = int(os.environ.get("PORT", 5000))
-	app.run(debug=True, host='0.0.0.0', port=port)
+app.run(debug=True, host='0.0.0.0', port=port)
