@@ -72,7 +72,7 @@ def get_stocks(start, stop, symbol):
 	averages.append(avg_high)
 	averages.append(avg_low)
 	averages.append(avg_close)
-	averages.append(avg_vol)
+	averages.append(int(avg_vol))
 	layout.append(averages)
 	return layout
 	
